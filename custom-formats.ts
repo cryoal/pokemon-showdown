@@ -16,9 +16,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		mod: 'gen9',
 		ruleset: [
 			'[Gen 9] National Dex Ubers',
-			'Species Clause',
-			'Item Clause',
-			'Sleep Clause Mod',
+			'Item Clause'
+			
 		],
 		banlist: [
 			// Abilities
