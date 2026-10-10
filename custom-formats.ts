@@ -134,37 +134,39 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	},
 ];
 
-{
-  name: "[Gen 9] Custom NatDex Ubers ZA",
-  mod: 'gen9',
-  ruleset: [
-    'Standard NatDex',
-    '+Future',
-    '+Unreleased',
-  ],
-  unbanlist: [
-    // Legends: Z-A Starter & Dragon Megas
-    'Dragonitite',
-    'Feraligatrinite',
-    'Meganiumite',
-    'Emboarite',
-    'Serperiorite',
-    // Kalos Megas & ZA Additions
-    'Chesnaughtite',
-    'Delphoxite',
-    'Greninjite',
-    'Raichunite',
-    'Zygardite',
-    'Pyroarite',
-    'Floetteite',
-    'Hawluchanite',
-    'Goodranite',
-    'Trevenantite',
-    'Noivernite',
-    'Flygonite',
-    'Malamarite',
-    'Avaluggite',
-    'Golisopodite',
-    'Dragapultite',
-  ],
-}
+export const Formats: FormatList = [
+  {
+    name: "[Gen 9] Custom NatDex Ubers ZA",
+    mod: 'gen9',
+    ruleset: [
+      'Standard NatDex',
+      '!Obtainable Items',
+      '+Future',
+      '+Unreleased',
+    ],
+    unbanlist: [
+      'Dragoninite',
+      'Feraligite',
+      'Meganiumite',
+      'Emboarite',
+      'Serperiorite',
+      'Chesnaughtite',
+      'Delphoxite',
+      'Greninjite',
+      'Raichunite X',
+      'Raichunite Y',
+      'Zygardite',
+      'Pyroarite',
+      'Floettite',
+      'Hawluchanite',
+      'Goodranite',
+      'Trevenantite',
+      'Noivernite',
+      'Flygonite',
+      'Malamarite',
+      'Avaluggite',
+      'Golisopite',
+      'Dragapultite',
+    ],
+  },
+];
