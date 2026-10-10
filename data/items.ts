@@ -8186,6 +8186,111 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 	export const Items: import('../sim/dex-items').ItemDataTable = {
 	// ... thousands of existing items ...
 
+	// ===== Pokemon Legends: Z-A Mega Stones =====
+	absolzite: {
+		name: "Absolite Z",
+		spritenum: 576,
+		megaStone: "Absol-Mega-Z",
+		megaEvolves: "Absol",
+		itemUser: ["Absol"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3001,
+		gen: 9,
+	},
+	baxcaliburite: {
+		name: "Baxcaliburite",
+		spritenum: 576,
+		megaStone: "Baxcalibur-Mega",
+		megaEvolves: "Baxcalibur",
+		itemUser: ["Baxcalibur"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3002,
+		gen: 9,
+	},
+	chimechoite: {
+		name: "Chimechoite",
+		spritenum: 576,
+		megaStone: "Chimecho-Mega",
+		megaEvolves: "Chimecho",
+		itemUser: ["Chimecho"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3003,
+		gen: 9,
+	},
+	crabominite: {
+		name: "Crabominite",
+		spritenum: 576,
+		megaStone: "Crabominable-Mega",
+		megaEvolves: "Crabominable",
+		itemUser: ["Crabominable"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3004,
+		gen: 9,
+	},
+	garchompitez: {
+		name: "Garchompite Z",
+		spritenum: 576,
+		megaStone: "Garchomp-Mega-Z",
+		megaEvolves: "Garchomp",
+		itemUser: ["Garchomp"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3005,
+		gen: 9,
+	},
+	glimmoranite: {
+		name: "Glimmoranite",
+		spritenum: 576,
+		megaStone: "Glimmora-Mega",
+		megaEvolves: "Glimmora",
+		itemUser: ["Glimmora"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3006,
+		gen: 9,
+	},
+	golurkite: {
+		name: "Golurkite",
+		spritenum: 576,
+		megaStone: "Golurk-Mega",
+		megaEvolves: "Golurk",
+		itemUser: ["Golurk"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3007,
+		gen: 9,
+	},
+	heatranite: {
+		name: "Heatranite",
+		spritenum: 576,
+		megaStone: "Heatran-Mega",
+		megaEvolves: "Heatran",
+		itemUser: ["Heatran"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3008,
+		gen: 9,
+	},
 	lucarionitez: {
 		name: "Lucarionite Z",
 		spritenum: 576,
@@ -8199,8 +8304,107 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		num: 3009,
 		gen: 9,
 	},
-
-	// ... rest of your stones ...
-
-	// LAST existing item's closing brace, THEN:
-};
+	magearnite: {
+		name: "Magearnite",
+		spritenum: 576,
+		megaStone: "Magearna-Mega",
+		megaEvolves: "Magearna",
+		itemUser: ["Magearna"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3010,
+		gen: 9,
+	},
+	meowsticite: {
+		name: "Meowsticite",
+		spritenum: 576,
+		megaStone: ["Meowstic-M-Mega", "Meowstic-F-Mega"],
+		megaEvolves: ["Meowstic", "Meowstic-F"],
+		itemUser: ["Meowstic", "Meowstic-F"],
+		onTakeItem(item, source) {
+			if ((item.megaEvolves as string[]).includes(source.baseSpecies.baseSpecies)) return false;
+			return true;
+		},
+		num: 3011,
+		gen: 9,
+	},
+	raichunitex: {
+		name: "Raichunite X",
+		spritenum: 576,
+		megaStone: "Raichu-Mega-X",
+		megaEvolves: "Raichu",
+		itemUser: ["Raichu"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3012,
+		gen: 9,
+	},
+	raichunitey: {
+		name: "Raichunite Y",
+		spritenum: 576,
+		megaStone: "Raichu-Mega-Y",
+		megaEvolves: "Raichu",
+		itemUser: ["Raichu"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3013,
+		gen: 9,
+	},
+	scovillainite: {
+		name: "Scovillainite",
+		spritenum: 576,
+		megaStone: "Scovillain-Mega",
+		megaEvolves: "Scovillain",
+		itemUser: ["Scovillain"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3014,
+		gen: 9,
+	},
+	staraptite: {
+		name: "Staraptite",
+		spritenum: 576,
+		megaStone: "Staraptor-Mega",
+		megaEvolves: "Staraptor",
+		itemUser: ["Staraptor"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3015,
+		gen: 9,
+	},
+	tatsugirinite: {
+		name: "Tatsugirinite",
+		spritenum: 576,
+		megaStone: ["Tatsugiri-Curly-Mega", "Tatsugiri-Droopy-Mega", "Tatsugiri-Stretchy-Mega"],
+		megaEvolves: ["Tatsugiri", "Tatsugiri-Droopy", "Tatsugiri-Stretchy"],
+		itemUser: ["Tatsugiri", "Tatsugiri-Droopy", "Tatsugiri-Stretchy"],
+		onTakeItem(item, source) {
+			if ((item.megaEvolves as string[]).includes(source.baseSpecies.baseSpecies)) return false;
+			return true;
+		},
+		num: 3016,
+		gen: 9,
+	},
+	zeraorite: {
+		name: "Zeraorite",
+		spritenum: 576,
+		megaStone: "Zeraora-Mega",
+		megaEvolves: "Zeraora",
+		itemUser: ["Zeraora"],
+		onTakeItem(item, source) {
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
+		},
+		num: 3017,
+		gen: 9,
+	},
