@@ -8185,12 +8185,11 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 };
 	// ===== Pokemon Legends: Z-A Mega Stones =====
 	// Paste inside the Items object, after existing entries.
-	// IMPORTANT: The `megaStone` string must match the key of the Mega species in pokedex.ts.
-	// `num` values are placeholders; change them if they collide with existing items.
+	// No isNonstandard flag => treated as standard/legal.
 
 	absolzite: {
 		name: "Absolite Z",
-		spritenum: 576, // Placeholder sprite
+		spritenum: 576,
 		megaStone: "Absol-Mega-Z",
 		megaEvolves: "Absol",
 		itemUser: ["Absol"],
@@ -8198,9 +8197,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10001,
+		num: 3001,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	baxcaliburite: {
 		name: "Baxcaliburite",
@@ -8212,9 +8210,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10002,
+		num: 3002,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	chimechoite: {
 		name: "Chimechoite",
@@ -8226,9 +8223,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10003,
+		num: 3003,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	crabominite: {
 		name: "Crabominite",
@@ -8240,9 +8236,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10004,
+		num: 3004,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	garchompitez: {
 		name: "Garchompite Z",
@@ -8254,9 +8249,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10005,
+		num: 3005,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	glimmoranite: {
 		name: "Glimmoranite",
@@ -8268,9 +8262,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10006,
+		num: 3006,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	golurkite: {
 		name: "Golurkite",
@@ -8282,9 +8275,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10007,
+		num: 3007,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	heatranite: {
 		name: "Heatranite",
@@ -8296,9 +8288,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10008,
+		num: 3008,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	lucarionitez: {
 		name: "Lucarionite Z",
@@ -8310,9 +8301,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10009,
+		num: 3009,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	magearnite: {
 		name: "Magearnite",
@@ -8324,9 +8314,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10010,
+		num: 3010,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	meowsticite: {
 		name: "Meowsticite",
@@ -8338,9 +8327,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if ((item.megaEvolves as string[]).includes(source.baseSpecies.baseSpecies)) return false;
 			return true;
 		},
-		num: 10011,
+		num: 3011,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	raichunitex: {
 		name: "Raichunite X",
@@ -8352,9 +8340,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10012,
+		num: 3012,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	raichunitey: {
 		name: "Raichunite Y",
@@ -8366,9 +8353,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10013,
+		num: 3013,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	scovillainite: {
 		name: "Scovillainite",
@@ -8380,9 +8366,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10014,
+		num: 3014,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	staraptite: {
 		name: "Staraptite",
@@ -8394,9 +8379,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10015,
+		num: 3015,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	tatsugirinite: {
 		name: "Tatsugirinite",
@@ -8408,9 +8392,8 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if ((item.megaEvolves as string[]).includes(source.baseSpecies.baseSpecies)) return false;
 			return true;
 		},
-		num: 10016,
+		num: 3016,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
 	zeraorite: {
 		name: "Zeraorite",
@@ -8422,7 +8405,6 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
 			return true;
 		},
-		num: 10017,
+		num: 3017,
 		gen: 9,
-		isNonstandard: "Custom",
 	},
