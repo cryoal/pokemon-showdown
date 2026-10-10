@@ -19,7 +19,7 @@ const BANNED_MEGAS = [
 	'Zygarde-Mega',
 ];
 
-// All other Mega Pokemon to unban (add/remove as your dex requires)
+// All other Mega Pokemon to unban
 const UNBANNED_MEGAS = [
 	'Meganium-Mega', 'Barbaracle-Mega', 'Baxcalibur-Mega', 'Chandelure-Mega',
 	'Chesnaught-Mega', 'Chimecho-Mega', 'Clefable-Mega', 'Crabominable-Mega',
@@ -33,21 +33,6 @@ const UNBANNED_MEGAS = [
 	'Tatsugiri-Droopy-Mega', 'Tatsugiri-Stretchy-Mega', 'Victreebel-Mega',
 	'Zeraora-Mega', 'Raichu-Mega-X', 'Raichu-Mega-Y', 'Absol-Mega-Z',
 	'Garchomp-Mega-Z', 'Lucario-Mega-Z',
-];
-
-// Mega Stones for the unbanned Megas (adjust to match your dex's item names)
-const UNBANNED_MEGA_STONES = [
-	'Meganiumite', 'Barbaracite', 'Baxcalibrite', 'Chandelurite',
-	'Chesnaughtite', 'Chimechoite', 'Clefablite', 'Crabominite',
-	'Crucibellite', 'Delphoxite', 'Dragalgite', 'Dragoniteite',
-	'Drampite', 'Eelektrossite', 'Emboarite', 'Excadrillite',
-	'Falinksite', 'Feraligatrite', 'Floettite', 'Froslassite',
-	'Glimmorite', 'Golurkite', 'Greninjaite', 'Hawluchite',
-	'Malamarite', 'Meowsticite', 'Pyroarite', 'Scolipedite',
-	'Scovillainite', 'Scraftyite', 'Skarmorite', 'Staraptorite',
-	'Starmieite', 'Tatsugirite', 'Victreebelite', 'Zeraorite',
-	'Raichunite-X', 'Raichunite-Y', 'Absolite-Z', 'Garchompite-Z',
-	'Lucarionite-Z',
 ];
 
 export const Formats: import('../sim/dex-formats').FormatList = [
@@ -100,10 +85,8 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 		unbanlist: [
 			'Terapagos', 'Zygarde-10%', 'Baton Pass',
-			// Unban the allowed Megas
+			// Unban the allowed Megas (their stones are legal by default if they exist in the dex)
 			...UNBANNED_MEGAS,
-			// Unban their Mega Stones
-			...UNBANNED_MEGA_STONES,
 		],
 
 		// Terapagos cannot Terastallize; Mega Lucario Z gains Mind's Eye on Mega Evolving
