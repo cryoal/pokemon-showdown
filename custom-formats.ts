@@ -11,7 +11,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		section: "Custom Formats",
 	},
 	{
-		name: "[Gen 9] Evoila Dex",
+		name: "[Gen 9] National Dex Evoila",
 		desc: "National Dex Ubers with a custom banlist, a Species/Item/Sleep Clause, and a cap on Mythical, Sub-Legendary and Legendary Pokemon per team.",
 		mod: 'gen9',
 		ruleset: [
