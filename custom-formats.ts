@@ -25,7 +25,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Arena Trap', 'Moody', 'Sand Veil', 'Snow Cloak', 'Shadow Tag',
 
 			// Items
-			'Bright Powder', "King's Rock", 'Razor Fang', 'Legend Plate', 'Lax Incense',
+			'Bright Powder', "King's Rock", 'Razor Fang', 'Lax Incense',
 
 			// Moves
 			'Last Respects', 'Revival Blessing', 'Double Team', 'Minimize', 'Assist',
