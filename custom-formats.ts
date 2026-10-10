@@ -9,6 +9,47 @@ const ULTRA_BEASTS = [
 	'Guzzlord', 'Poipole', 'Naganadel', 'Stakataka', 'Blacephalon',
 ];
 
+// Mega Pokemon explicitly kept banned (do NOT unban these)
+const BANNED_MEGAS = [
+	'Heatran-Mega',
+	'Darkrai-Mega',
+	'Golisopod-Mega',
+	'Magearna-Mega',
+	'Magearna-Original-Mega',
+	'Zygarde-Mega',
+];
+
+// All other Mega Pokemon to unban (add/remove as your dex requires)
+const UNBANNED_MEGAS = [
+	'Meganium-Mega', 'Barbaracle-Mega', 'Baxcalibur-Mega', 'Chandelure-Mega',
+	'Chesnaught-Mega', 'Chimecho-Mega', 'Clefable-Mega', 'Crabominable-Mega',
+	'Crucibelle-Mega', 'Delphox-Mega', 'Dragalge-Mega', 'Dragonite-Mega',
+	'Drampa-Mega', 'Eelektross-Mega', 'Emboar-Mega', 'Excadrill-Mega',
+	'Falinks-Mega', 'Feraligatr-Mega', 'Floette-Mega', 'Froslass-Mega',
+	'Glimmora-Mega', 'Golurk-Mega', 'Greninja-Mega', 'Hawlucha-Mega',
+	'Malamar-Mega', 'Meowstic-F-Mega', 'Meowstic-M-Mega', 'Pyroar-Mega',
+	'Scolipede-Mega', 'Scovillain-Mega', 'Scrafty-Mega', 'Skarmory-Mega',
+	'Staraptor-Mega', 'Starmie-Mega', 'Tatsugiri-Curly-Mega',
+	'Tatsugiri-Droopy-Mega', 'Tatsugiri-Stretchy-Mega', 'Victreebel-Mega',
+	'Zeraora-Mega', 'Raichu-Mega-X', 'Raichu-Mega-Y', 'Absol-Mega-Z',
+	'Garchomp-Mega-Z', 'Lucario-Mega-Z',
+];
+
+// Mega Stones for the unbanned Megas (adjust to match your dex's item names)
+const UNBANNED_MEGA_STONES = [
+	'Meganiumite', 'Barbaracite', 'Baxcalibrite', 'Chandelurite',
+	'Chesnaughtite', 'Chimechoite', 'Clefablite', 'Crabominite',
+	'Crucibellite', 'Delphoxite', 'Dragalgite', 'Dragoniteite',
+	'Drampite', 'Eelektrossite', 'Emboarite', 'Excadrillite',
+	'Falinksite', 'Feraligatrite', 'Floettite', 'Froslassite',
+	'Glimmorite', 'Golurkite', 'Greninjaite', 'Hawluchite',
+	'Malamarite', 'Meowsticite', 'Pyroarite', 'Scolipedite',
+	'Scovillainite', 'Scraftyite', 'Skarmorite', 'Staraptorite',
+	'Starmieite', 'Tatsugirite', 'Victreebelite', 'Zeraorite',
+	'Raichunite-X', 'Raichunite-Y', 'Absolite-Z', 'Garchompite-Z',
+	'Lucarionite-Z',
+];
+
 export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		section: "Custom Formats",
@@ -38,29 +79,41 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Calyrex-Shadow', 'Gengar-Mega',
 
 			// Mythicals
-			'Arceus', 'Darkrai-Mega', 'Magearna', 'Deoxys-Attack', 'Hoopa-Unbound',
+			'Arceus', 'Magearna', 'Deoxys-Attack', 'Hoopa-Unbound',
 
 			// Sub-Legendaries
 			'Urshifu', 'Wo-Chien', 'Chien-Pao', 'Ting-Lu', 'Chi-Yu',
-			'Ogerpon-Wellspring', 'Ogerpon-Hearthflame', 'Heatran-Mega', 'Spectrier',
+			'Ogerpon-Wellspring', 'Ogerpon-Hearthflame', 'Spectrier',
 
 			// Legendaries: everything restricted is banned (Terapagos and Zygarde-10% are unbanned below)
 			'Restricted Legendary',
 
 			// Other bans
 			'Paradox', 'Sneasler', 'Dracovish', 'Darmanitan-Galar', 'Ursaluna-Bloodmoon',
-			'Gholdengo', 'Kingambit', 'Golisopod-Mega',
+			'Gholdengo', 'Kingambit',
 
 			// Zygarde-10% is allowed, but not with Power Construct
 			'Zygarde-10% + Power Construct',
-		],
-		unbanlist: ['Terapagos', 'Zygarde-10%', 'Baton Pass'],
 
-		// Terapagos cannot Terastallize
+			// Mega Pokemon we are keeping banned
+			...BANNED_MEGAS,
+		],
+		unbanlist: [
+			'Terapagos', 'Zygarde-10%', 'Baton Pass',
+			// Unban the allowed Megas
+			...UNBANNED_MEGAS,
+			// Unban their Mega Stones
+			...UNBANNED_MEGA_STONES,
+		],
+
+		// Terapagos cannot Terastallize; Mega Lucario Z gains Mind's Eye on Mega Evolving
 		onBegin() {
 			for (const pokemon of this.getAllPokemon()) {
 				if (pokemon.species.baseSpecies === 'Terapagos') {
 					pokemon.canTerastallize = null;
+				}
+				if (pokemon.species.name === 'Lucario-Mega-Z') {
+					pokemon.ability = 'mindseye' as ID;
 				}
 			}
 		},
