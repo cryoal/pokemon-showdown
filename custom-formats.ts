@@ -27,7 +27,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			"King's Rock", 'Razor Fang',
 
 			// Moves
-			'Last Respects', 'Revival Blessing', 'Assist',
+			'Last Respects', 'Revival Blessing',
 			'Sing', 'Sleep Powder', 'Hypnosis', 'Spore', 'Grass Whistle', 'Dark Void',
 			'Tera Blast',
 
