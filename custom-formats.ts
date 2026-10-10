@@ -46,9 +46,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: [
 			'[Gen 9] National Dex Ubers',
 			'Item Clause = 1',
-			'!Obtainable Items', // Bypasses the "does not exist in Gen 9" error for future/custom items
-			'+Future',           // Allows items/forms with the future flag
-			'+Unreleased',       // Allows unreleased data flags
+			'!Obtainable', // Bypasses the "does not exist in Gen 9" obtainability checks
+			'+Future',     // Allows future-tagged elements
+			'+Unreleased', // Allows unreleased-tagged elements
 		],
 		banlist: [
 			// Abilities
