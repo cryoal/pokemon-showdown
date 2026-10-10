@@ -21,13 +21,13 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 		banlist: [
 			// Abilities
-			'Arena Trap', 'Moody', 'Sand Veil', 'Snow Cloak', 'Shadow Tag',
+			'Arena Trap', 'Moody', 'Shadow Tag',
 
 			// Items
-			'Bright Powder', "King's Rock", 'Razor Fang', 'Lax Incense',
+			"King's Rock", 'Razor Fang',
 
 			// Moves
-			'Last Respects', 'Revival Blessing', 'Double Team', 'Minimize', 'Assist',
+			'Last Respects', 'Revival Blessing', 'Assist',
 			'Sing', 'Sleep Powder', 'Hypnosis', 'Spore', 'Grass Whistle', 'Dark Void',
 			'Tera Blast',
 
