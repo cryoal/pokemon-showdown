@@ -7,7 +7,7 @@ RUN apt-get update \
 WORKDIR /app
 RUN git clone --depth 1 https://github.com/smogon/pokemon-showdown.git .
 RUN npm install
-
+COPY custom-formats.ts /app/config/custom-formats.ts
 # Compile once at build time (this is the fix for the esbuild crash)
 RUN node build
 
