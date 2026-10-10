@@ -87,7 +87,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Terapagos', 'Zygarde-10%', 'Baton Pass',
 			// Unban the allowed Megas
 			...UNBANNED_MEGAS,
-		
 		],
 
 		// Terapagos cannot Terastallize; Mega Lucario Z gains Mind's Eye on Mega Evolving
