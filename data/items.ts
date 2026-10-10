@@ -43,17 +43,18 @@ export const Items: import('../sim/dex-items').ItemDataTable = {
 		gen: 6,
 		isNonstandard: "Past",
 	},
-	absolitez: {
+		absolitez: {
 		name: "Absolite Z",
 		spritenum: 499,
-		megaStone: { "Absol": "Absol-Mega-Z" },
+		megaStone: "Absol-Mega-Z",
+		megaEvolves: "Absol",
 		itemUser: ["Absol"],
 		onTakeItem(item, source) {
-			return !item.megaStone?.[source.baseSpecies.baseSpecies];
+			if (item.megaEvolves === source.baseSpecies.baseSpecies) return false;
+			return true;
 		},
 		num: 2638,
 		gen: 9,
-		isNonstandard: "Future",
 	},
 	absorbbulb: {
 		name: "Absorb Bulb",
