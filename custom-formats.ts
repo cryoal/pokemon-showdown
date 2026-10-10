@@ -35,21 +35,6 @@ const UNBANNED_MEGAS = [
 	'Garchomp-Mega-Z', 'Lucario-Mega-Z',
 ];
 
-// Mega Stones for the unbanned Megas (adjust to match your dex's item names)
-const UNBANNED_MEGA_STONES = [
-	'Meganiumite', 'Barbaracite', 'Baxcalibrite', 'Chandelurite',
-	'Chesnaughtite', 'Chimechoite', 'Clefablite', 'Crabominite',
-	'Crucibellite', 'Delphoxite', 'Dragalgite', 'Dragoniteite',
-	'Drampite', 'Eelektrossite', 'Emboarite', 'Excadrillite',
-	'Falinksite', 'Feraligatrite', 'Floettite', 'Froslassite',
-	'Glimmorite', 'Golurkite', 'Greninjaite', 'Hawluchite',
-	'Malamarite', 'Meowsticite', 'Pyroarite', 'Scolipedite',
-	'Scovillainite', 'Scraftyite', 'Skarmorite', 'Staraptorite',
-	'Starmieite', 'Tatsugirite', 'Victreebelite', 'Zeraorite',
-	'Raichunite-X', 'Raichunite-Y', 'Absolite-Z', 'Garchompite-Z',
-	'Lucarionite-Z',
-];
-
 export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		section: "Custom Formats",
