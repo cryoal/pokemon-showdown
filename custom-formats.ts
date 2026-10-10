@@ -134,39 +134,3 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 	},
 ];
 
-export const Formats: FormatList = [
-  {
-    name: "[Gen 9] Custom NatDex Ubers ZA",
-    mod: 'gen9',
-    ruleset: [
-      'Standard NatDex',
-      '!Obtainable Items',
-      '+Future',
-      '+Unreleased',
-    ],
-    unbanlist: [
-      'Dragoninite',
-      'Feraligite',
-      'Meganiumite',
-      'Emboarite',
-      'Serperiorite',
-      'Chesnaughtite',
-      'Delphoxite',
-      'Greninjite',
-      'Raichunite X',
-      'Raichunite Y',
-      'Zygardite',
-      'Pyroarite',
-      'Floettite',
-      'Hawluchanite',
-      'Goodranite',
-      'Trevenantite',
-      'Noivernite',
-      'Flygonite',
-      'Malamarite',
-      'Avaluggite',
-      'Golisopite',
-      'Dragapultite',
-    ],
-  },
-];
