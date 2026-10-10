@@ -13,4 +13,4 @@ ln -s /data/config /app/config
 ln -s /data/logs /app/logs
 
 cd /app
-exec sleep infinity
+exec node pokemon-showdown "${PORT:-8000}" --skip-build
