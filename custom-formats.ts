@@ -46,6 +46,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: [
 			'[Gen 9] National Dex Ubers',
 			'Item Clause = 1',
+			'!Obtainable Items', // Bypasses the "does not exist in Gen 9" error for future/custom items
+			'+Future',           // Allows items/forms with the future flag
+			'+Unreleased',       // Allows unreleased data flags
 		],
 		banlist: [
 			// Abilities
@@ -85,8 +88,14 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		],
 		unbanlist: [
 			'Terapagos', 'Zygarde-10%', 'Baton Pass',
-			// Unban the allowed Megas (their stones are legal by default if they exist in the dex)
+			// Unban the allowed Megas
 			...UNBANNED_MEGAS,
+			// ZA Mega Stones corresponding to unbanned megas
+			'Dragoninite', 'Feraligite', 'Meganiumite', 'Emboarite', 'Serperiorite',
+			'Chesnaughtite', 'Delphoxite', 'Greninjite', 'Raichunite X', 'Raichunite Y',
+			'Zygardite', 'Pyroarite', 'Floettite', 'Hawluchanite', 'Goodranite',
+			'Trevenantite', 'Noivernite', 'Flygonite', 'Malamarite', 'Avaluggite',
+			'Golisopite', 'Dragapultite',
 		],
 
 		// Terapagos cannot Terastallize; Mega Lucario Z gains Mind's Eye on Mega Evolving
@@ -133,4 +142,3 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		},
 	},
 ];
-
