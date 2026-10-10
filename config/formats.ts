@@ -6071,3 +6071,38 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: ['HP Percentage Mod', 'Cancel Mod', 'Desync Clause Mod', 'Max Team Size = 24', 'Max Move Count = 24', 'Max Level = 9999', 'Default Level = 100'],
 	},
 ];
+
+{
+  name: "[Gen 9] Custom NatDex Ubers ZA",
+  mod: 'gen9',
+  ruleset: [
+    'Standard NatDex',
+    '+Future',
+    '+Unreleased',
+  ],
+  unbanlist: [
+    // Legends: Z-A Starter & Dragon Megas
+    'Dragonitite',
+    'Feraligatrinite',
+    'Meganiumite',
+    'Emboarite',
+    'Serperiorite',
+    // Kalos Megas & ZA Additions
+    'Chesnaughtite',
+    'Delphoxite',
+    'Greninjite',
+    'Raichunite',
+    'Zygardite',
+    'Pyroarite',
+    'Floetteite',
+    'Hawluchanite',
+    'Goodranite',
+    'Trevenantite',
+    'Noivernite',
+    'Flygonite',
+    'Malamarite',
+    'Avaluggite',
+    'Golisopodite',
+    'Dragapultite',
+  ],
+}
