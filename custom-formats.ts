@@ -46,6 +46,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: [
 			'[Gen 9] National Dex Ubers',
 			'Item Clause = 1',
+			'Evasion Abilities Clause = 1',
 		],
 		banlist: [
 			// Abilities
