@@ -62,7 +62,10 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 			// Pokemon
 			'Miraidon', 'Koraidon', 'Eternatus-Eternamax',
-			'Calyrex-Shadow', 'Gengar-Mega', 'Terapagos-Stellar',
+			'Calyrex-Shadow', 'Gengar-Mega',
+
+			// Terapagos: only the Stellar forme is banned
+			'Terapagos-Stellar',
 
 			// Mythicals
 			'Arceus', 'Magearna', 'Deoxys-Attack', 'Hoopa-Unbound',
@@ -85,7 +88,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			...BANNED_MEGAS,
 		],
 		unbanlist: [
-			'Terapagos-Terastal', 'Zygarde-10%', 'Baton Pass',
+			// Terapagos base forme and Terapagos-Terastal are allowed
+			'Terapagos', 'Terapagos-Terastal',
+			'Zygarde-10%', 'Baton Pass',
 			// Unban the allowed Megas
 			...UNBANNED_MEGAS,
 		],
