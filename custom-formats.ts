@@ -62,7 +62,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 
 			// Pokemon
 			'Miraidon', 'Koraidon', 'Eternatus-Eternamax',
-			'Calyrex-Shadow', 'Gengar-Mega',
+			'Calyrex-Shadow', 'Gengar-Mega', 'Terapagos-Stellar',
 
 			// Mythicals
 			'Arceus', 'Magearna', 'Deoxys-Attack', 'Hoopa-Unbound',
