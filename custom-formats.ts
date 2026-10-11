@@ -85,7 +85,7 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			...BANNED_MEGAS,
 		],
 		unbanlist: [
-			'Terapagos', 'Zygarde-10%', 'Baton Pass',
+			'Terapagos-Terastal', 'Zygarde-10%', 'Baton Pass',
 			// Unban the allowed Megas
 			...UNBANNED_MEGAS,
 		],
