@@ -167,3 +167,20 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		},
 	},
 ];
+
+export const Formats: import('../sim/dex-formats').FormatList = [
+  {
+    section: "Custom Formats",
+  },
+  {
+    name: "[Gen 9] National Dex Evoila",
+    mod: 'gen9',
+    ruleset: [
+      '[Gen 9] National Dex Ubers',
+      '!Obtainable', // IMPORTANT: Disables generation filtering on items/moves/species
+      '+Future',     // Allows items/species tagged with isNonstandard: "Future"
+      '+Unreleased', // Allows items/species tagged with isNonstandard: "Unobtainable" or "Unreleased"
+    ],
+    // Keep your banlist / unbanlist as they were!
+  },
+];
