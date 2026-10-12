@@ -9,6 +9,13 @@ const ULTRA_BEASTS = [
 	'Guzzlord', 'Poipole', 'Naganadel', 'Stakataka', 'Blacephalon',
 ];
 
+// Ability each Mega gets when it Mega Evolves (key = Mega forme name, value = ability name)
+const MEGA_ABILITIES: {[species: string]: string} = {
+	'Ampharos-Mega': 'Fluffy',
+	'Lucario-Mega': "Mind's Eye",
+	'Lucario-Mega-Z': "Mind's Eye",
+};
+
 // Mega Pokemon explicitly kept banned (do NOT unban these)
 const BANNED_MEGAS = [
 	'Heatran-Mega',
@@ -33,6 +40,20 @@ const UNBANNED_MEGAS = [
 	'Tatsugiri-Droopy-Mega', 'Tatsugiri-Stretchy-Mega', 'Victreebel-Mega',
 	'Zeraora-Mega', 'Raichu-Mega-X', 'Raichu-Mega-Y', 'Absol-Mega-Z',
 	'Garchomp-Mega-Z', 'Lucario-Mega-Z',
+];
+
+// Mega stones flagged as "Future" in the data (Z-A stones). They must be unbanned by name.
+// Darkranite, Heatranite, Golisopite, Magearnite and Zygardite are left out on purpose (their Megas are banned).
+const UNBANNED_MEGA_STONES = [
+	'Absolite Z', 'Barbaracite', 'Baxcalibrite', 'Chandelurite', 'Chesnaughtite',
+	'Chimechite', 'Clefablite', 'Crabominite', 'Crucibellite', 'Delphoxite',
+	'Dragalgite', 'Dragoninite', 'Drampanite', 'Eelektrossite', 'Emboarite',
+	'Excadrite', 'Falinksite', 'Feraligite', 'Floettite', 'Froslassite',
+	'Garchompite Z', 'Glimmoranite', 'Golurkite', 'Greninjite', 'Hawluchanite',
+	'Lucarionite Z', 'Malamarite', 'Meganiumite', 'Meowsticite', 'Pyroarite',
+	'Raichunite X', 'Raichunite Y', 'Scolipite', 'Scovillainite', 'Scraftinite',
+	'Skarmorite', 'Staraptite', 'Starminite', 'Tatsugirinite', 'Victreebelite',
+	'Zeraorite',
 ];
 
 export const Formats: import('../sim/dex-formats').FormatList = [
@@ -93,18 +114,25 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			'Zygarde-10%', 'Baton Pass',
 			// Unban the allowed Megas
 			...UNBANNED_MEGAS,
+			// Unban the matching Mega stones
+			...UNBANNED_MEGA_STONES,
 		],
 
-		// Terapagos cannot Terastallize; Mega Lucario Z gains Mind's Eye on Mega Evolving
+		// Terapagos cannot Terastallize
 		onBegin() {
 			for (const pokemon of this.getAllPokemon()) {
 				if (pokemon.species.baseSpecies === 'Terapagos') {
 					pokemon.canTerastallize = null;
 				}
-				if (pokemon.species.name === 'Lucario-Mega-Z') {
-					pokemon.ability = 'mindseye' as ID;
-				}
 			}
+		},
+
+		// Give Megas their custom ability right after they Mega Evolve
+		onAfterMega(pokemon) {
+			const ability = MEGA_ABILITIES[pokemon.species.name];
+			if (!ability) return;
+			pokemon.setAbility(ability, null, null, true);
+			pokemon.baseAbility = this.toID(ability);
 		},
 
 		// Max 2 Pokemon per team from Legendary + Sub-Legendary (Ultra Beasts excluded) + Mythical combined
