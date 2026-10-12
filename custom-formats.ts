@@ -9,13 +9,6 @@ const ULTRA_BEASTS = [
 	'Guzzlord', 'Poipole', 'Naganadel', 'Stakataka', 'Blacephalon',
 ];
 
-// Ability each Mega gets when it Mega Evolves (key = Mega forme name, value = ability name)
-const MEGA_ABILITIES: {[species: string]: string} = {
-	'Ampharos-Mega': 'Fluffy',
-	'Lucario-Mega': "Mind's Eye",
-	'Lucario-Mega-Z': "Mind's Eye",
-};
-
 // Mega Pokemon explicitly kept banned (do NOT unban these)
 const BANNED_MEGAS = [
 	'Heatran-Mega',
@@ -26,7 +19,7 @@ const BANNED_MEGAS = [
 	'Zygarde-Mega',
 ];
 
-// All other Mega Pokemon to unban (add/remove as your dex requires)
+// All other Mega Pokemon to unban
 const UNBANNED_MEGAS = [
 	'Meganium-Mega', 'Barbaracle-Mega', 'Baxcalibur-Mega', 'Chandelure-Mega',
 	'Chesnaught-Mega', 'Chimecho-Mega', 'Clefable-Mega', 'Crabominable-Mega',
@@ -42,20 +35,6 @@ const UNBANNED_MEGAS = [
 	'Garchomp-Mega-Z', 'Lucario-Mega-Z',
 ];
 
-// Mega stones flagged as "Future" in the data (Z-A stones). They must be unbanned by name.
-// Darkranite, Heatranite, Golisopite, Magearnite and Zygardite are left out on purpose (their Megas are banned).
-const UNBANNED_MEGA_STONES = [
-	'Absolite Z', 'Barbaracite', 'Baxcalibrite', 'Chandelurite', 'Chesnaughtite',
-	'Chimechite', 'Clefablite', 'Crabominite', 'Crucibellite', 'Delphoxite',
-	'Dragalgite', 'Dragoninite', 'Drampanite', 'Eelektrossite', 'Emboarite',
-	'Excadrite', 'Falinksite', 'Feraligite', 'Floettite', 'Froslassite',
-	'Garchompite Z', 'Glimmoranite', 'Golurkite', 'Greninjite', 'Hawluchanite',
-	'Lucarionite Z', 'Malamarite', 'Meganiumite', 'Meowsticite', 'Pyroarite',
-	'Raichunite X', 'Raichunite Y', 'Scolipite', 'Scovillainite', 'Scraftinite',
-	'Skarmorite', 'Staraptite', 'Starminite', 'Tatsugirinite', 'Victreebelite',
-	'Zeraorite',
-];
-
 export const Formats: import('../sim/dex-formats').FormatList = [
 	{
 		section: "Custom Formats",
@@ -67,7 +46,9 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 		ruleset: [
 			'[Gen 9] National Dex Ubers',
 			'Item Clause = 1',
-			'Evasion Abilities Clause',
+			'!Obtainable', // Disables Gen 9 existence/obtainability filtering for nonstandard items & species
+			'+Future',     // Permits items/species tagged with isNonstandard: "Future"
+			'+Unreleased', // Permits items/species tagged with isNonstandard: "Unobtainable" or "Unreleased"
 		],
 		banlist: [
 			// Abilities
@@ -84,9 +65,6 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			// Pokemon
 			'Miraidon', 'Koraidon', 'Eternatus-Eternamax',
 			'Calyrex-Shadow', 'Gengar-Mega',
-
-			// Terapagos: only the Stellar forme is banned
-			'Terapagos-Stellar',
 
 			// Mythicals
 			'Arceus', 'Magearna', 'Deoxys-Attack', 'Hoopa-Unbound',
@@ -109,30 +87,21 @@ export const Formats: import('../sim/dex-formats').FormatList = [
 			...BANNED_MEGAS,
 		],
 		unbanlist: [
-			// Terapagos base forme and Terapagos-Terastal are allowed
-			'Terapagos', 'Terapagos-Terastal',
-			'Zygarde-10%', 'Baton Pass',
+			'Terapagos', 'Zygarde-10%', 'Baton Pass',
 			// Unban the allowed Megas
 			...UNBANNED_MEGAS,
-			// Unban the matching Mega stones
-			...UNBANNED_MEGA_STONES,
 		],
 
-		// Terapagos cannot Terastallize
+		// Terapagos cannot Terastallize; Mega Lucario Z gains Mind's Eye on Mega Evolving
 		onBegin() {
 			for (const pokemon of this.getAllPokemon()) {
 				if (pokemon.species.baseSpecies === 'Terapagos') {
 					pokemon.canTerastallize = null;
 				}
+				if (pokemon.species.name === 'Lucario-Mega-Z') {
+					pokemon.ability = 'mindseye' as ID;
+				}
 			}
-		},
-
-		// Give Megas their custom ability right after they Mega Evolve
-		onAfterMega(pokemon) {
-			const ability = MEGA_ABILITIES[pokemon.species.name];
-			if (!ability) return;
-			pokemon.setAbility(ability, null, null, true);
-			pokemon.baseAbility = this.toID(ability);
 		},
 
 		// Max 2 Pokemon per team from Legendary + Sub-Legendary (Ultra Beasts excluded) + Mythical combined
